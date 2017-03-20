@@ -1,0 +1,25 @@
+->  The number of times you have been to Ted Drewes
+	"int" : coz it would be a whole number like 1,2 etc ad not a decimal
+
+->	Whether you like vanilla frozen custard or not
+	"boolean" : coz it is either true or false
+
+->	The number of people you can take in your car
+	"byte" : because again number of people is whole number but it is not large, so no need to use int
+	"int" can also be used instead if memory is not the concern
+
+->	The price of a small cup of vanilla frozen custard
+	"double" : because the cost can be 1.00, 1.99 etc
+	"float" would have also been sufficient coz we dont need to store large values
+
+->	The name of your favorite special offering from Ted Drewes
+	"String" : because it would be a text like "Chocolate ice cream"
+
+->	The address of the Ted Drewes that is closest to campus
+	"String" : because it contains string of text
+
+->	The percentage of calories in vanilla frozen custard that come from fat
+	"double" : it can be something like 40.38% fat;
+
+-> 	The probability that you will see a friend at Ted Drewes when you go there
+	"double" coz probability is something like 0.45467	

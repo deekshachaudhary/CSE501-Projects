@@ -1,0 +1,132 @@
+Problem 2:
+ 
+ f(x) =    x-10     if x > 100
+      = f(f(x+11))  if x <= 100
+      
+-> f(99) = f(f(99+11))
+	  = f(f(110))
+	  = f(110-10)
+	  = f(100)
+	  = f(f(100+11))
+	  = f(f(111))
+	  = f(111-10)
+	  = f(101)
+	  = 101-10
+	  = 91
+	  
+-> f(87) = f(f(87+11))
+	  = f(f(98))
+	  = f(f(f(98+11)))
+	  = f(f(f(109)))
+	  = f(f(109-10))
+	  = f(f(99))
+	  = f(f(f(99+11)))
+	  = f(f(f(110)))
+	  = f(f(110-10))
+	  = f(f(100))
+	  = f(f(f(100+11)))
+	  = f(f(f(111)))
+	  = f(f(111-10))
+	  = f(f(101))
+	  = f(101-10)
+	  = f(91)
+	  = f(f(91+11))
+	  = f(f(102))
+	  = f(102-10)
+	  = f(92)
+	  = f(f(92+11))
+	  = f(f(103))
+	  = f(103-10)
+	  = f(93)
+	  	.
+	  	.
+	  	.
+	  	.
+	  	.
+	  	.
+	  = f(99)
+	    .
+	  	.
+	  	.
+	  	.
+	  	.
+	  = 91
+	  
+-> Will this function terminate for all positive integers supplied as arguments.
+   I think it would terminate because there is a pattern in it;
+   like in f(87), there is a point when there is  f(91), then the
+   next smallest call is f(92), then f(93) and so on. When we would reach to f(99),
+   it would terminate.
+
+-> What do you expect this function to do for values of x > 100?
+   For values below 100, it keeps on giving 91. For values > 100, it
+   outputs x - 10.
+
+-> How will it behave for values <= 100?
+   For values <= 100, it would always generate 91.	  
+	  
+	  
+Problem 3:
+
+ g(x,y)  = y+1               if x = 0
+         = g(x-1,1)          if x > 0 and y = 0
+         = g(x-1, g(x, y-1)) if x > 0 and y > 0
+         
+-> g(1,0) = g(0,1)
+		  = 1+1
+		  = 2
+		  
+-> g(1,2) = g(0, g(1,1))
+		  = g(0, g(0, g(1, 0)))
+		  = g(0, g(0, g(0,1)))
+		  = g(0, g(0, 2))
+		  = g(0, 3)
+		  = 4
+		  
+-> g(2,2) = g(1, g(2,1))
+		  = g(1, g(1, g(2, 0)))
+		  = g(1, g(1, g(1, 1)))
+		  = g(1, g(1, g(0, g(1, 0))))
+		  = g(1, g(1, g(0, g(0,1))))
+		  = g(1, g(1, g(0, 2)))
+		  = g(1, g(1, 3))
+		  = g(1, g(0, g(1, 2)))
+		  = g(1, g(0, g(0, g(1, 1))))
+		  = g(1, g(0, g(0, g(0, g(1, 0)))))
+		  = g(1, g(0, g(0, g(0, g(0, 1)))))
+		  = g(1, g(0, g(0, g(0, 2))))
+		  = g(1, g(0, g(0, 3))
+		  = g(1, g(0, 4))
+		  = g(1, 5)
+		  = g(0, g(1, 4))
+		  = g(0, g(0, g(1, 3)))
+		  = g(0, g(0, g(0, g(1, 2))))
+		  = g(0, g(0, g(0, g(0, g(1, 1)))))
+		  = g(0, g(0, g(0, g(0, g(0, g(1, 0))))))
+		  = g(0, g(0, g(0, g(0, g(0, g(0, 1))))))
+		  = g(0, g(0, g(0, g(0, g(0, 2)))))
+		  = g(0, g(0, g(0, g(0, 3))))
+		  = g(0, g(0, g(0, 4)))
+		  = g(0, g(0, 5))
+		  = g(0, 6)
+		  = 7		  
+		  
+-> Will this function terminate for all positive integers supplied as arguments?
+	It would not terminate for all positive integers. It would only
+	terminate for values x <= 3 and y <= 12
+
+-> How do you expect this function behave with respect to x and y?
+	When x = 0, it would give y+(x+1)
+	When x = 1, it would give y+(x+1)
+	When x = 2, it would give y+(x+1),y+(x+2),y+(x+3),...,y+(x+100)
+	 
+	
+-> Implement it and try it out for values of x < 4 and various values of y.
+
+
+-> Now try it for x = 4 and various values of y.
+   What do you see?  
+	It wont work for 4 as the values become too large.
+		  
+
+
